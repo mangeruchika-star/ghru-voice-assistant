@@ -1,0 +1,7 @@
+SpeechRecognition==3.14.3
+pyttsx3==2.99
+PyAudio==0.2.14
+edge-tts==7.2.7
+pygame==2.6.1
+piper-tts==1.4.1
+Flask==3.1.0

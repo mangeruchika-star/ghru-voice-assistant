@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GHRU Voice Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div id="shell" class="shell">
+      <aside class="hero">
+        <div class="hero__top">
+          <img class="hero__logo" src="/image/logo.png" alt="GHRU Logo" />
+          
+          <p class="hero__subtitle">Voice Assistance</p>
+        </div>
+
+        <div id="avatar" class="avatar" aria-label="Assistant avatar">
+          <div class="avatar__antenna">
+            <span class="avatar__antenna-tip"></span>
+          </div>
+          <span class="avatar__ear avatar__ear--left"></span>
+          <span class="avatar__ear avatar__ear--right"></span>
+          <div class="avatar__head">
+            <div class="avatar__shine"></div>
+            <div class="avatar__face">
+              <span class="avatar__dot"></span>
+              <div class="avatar__eyes">
+                <span class="avatar__eye avatar__eye--left"></span>
+                <span class="avatar__eye avatar__eye--right"></span>
+              </div>
+              <div class="avatar__mouth"></div>
+            </div>
+          </div>
+          <div class="avatar__ring"></div>
+        </div>
+
+        <button id="startButton" class="start-orb" type="button">Start Voice Assistance</button>
+      </aside>
+
+      <main id="assistantPane" class="assistant assistant--hidden">
+        <header class="assistant__header">
+          <div>
+            <p class="assistant__eyebrow">Web Assistant</p>
+            <h2>GHRU Voice Console</h2>
+          </div>
+          <div class="assistant__controls">
+            <button id="langSwapButton" class="button button--lang-swap" type="button" disabled title="Switch language">
+              <span class="lang-swap__flag">🇮🇳</span>
+              <span class="lang-swap__label">EN</span>
+              <span class="lang-swap__arrow">⇄</span>
+              <span class="lang-swap__label">HI</span>
+            </button>
+            <button id="exitButton" class="button button--secondary" type="button">Exit</button>
+            <button id="micButton" class="button button--secondary" type="button" disabled>Start Listening</button>
+          </div>
+        </header>
+
+        <section id="statusBar" class="status status--idle">Waiting to start</section>
+
+        <section id="transcript" class="transcript" aria-live="polite"></section>
+
+        <form id="composer" class="composer">
+          <label class="sr-only" for="queryInput">Message</label>
+          <textarea
+            id="queryInput"
+            name="query"
+            rows="2"
+            placeholder="Type a message or use voice"
+            disabled
+          ></textarea>
+          <div class="composer__actions">
+            <button id="sendButton" class="button button--primary" type="submit" disabled>Send</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
