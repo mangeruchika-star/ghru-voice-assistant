@@ -1,3 +1,4 @@
+
 """Flask web app for the GHRU voice assistant."""
 
 from __future__ import annotations
